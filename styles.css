@@ -1,0 +1,206 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5; 
+}
+
+
+.header {
+    background-color: #2c3e50; 
+    color: #ecf0f1; 
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+.header .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.footer {
+    background-color: #2c3e50; 
+    color: #bdc3c7;
+    padding: 1rem 2rem;
+    margin-top: auto; 
+    justify-content: center;
+    font-size: 0.875rem;
+    text-align: center;
+    width: 100%; 
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10; 
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+
+.flashcard-container {
+    perspective: 1000px;
+    height: 16rem; 
+}
+@media (min-width: 768px) { 
+    .flashcard-container {
+        height: 20rem; 
+    }
+}
+@media (min-width: 1024px) { 
+    .flashcard-container {
+        height: 24rem; 
+    }
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 0.75rem; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+.flashcard-front {
+    background-color: #ffffff;
+    color: #1f2937; 
+    font-weight: 600; 
+    font-size: 1.5rem; 
+}
+.flashcard-back {
+    background-color: #eff6ff; 
+    color: #374151; 
+    font-size: 1.25rem; 
+    transform: rotateY(180deg);
+}
+
+
+@media (min-width: 768px) { 
+    .flashcard-front {
+        font-size: 1.875rem; 
+    }
+    .flashcard-back {
+        font-size: 1.5rem; 
+    }
+}
+
+
+.btn-green {
+    background-color: #28a745; 
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem; 
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.btn-green:hover {
+    background-color: #218838;
+}
+.btn-red {
+    background-color: #dc3545; 
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.btn-red:hover {
+    background-color: #c82333;
+}
+.btn-blue {
+    background-color: #007bff; 
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.btn-blue:hover {
+    background-color: #0069d9;
+}
+.btn-gray {
+    background-color: #6c757d; 
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.btn-gray:hover {
+    background-color: #5a6268;
+}
+
+
+.card-list-item, .deck-list-item {
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.message-box.show {
+    opacity: 1;
+}
